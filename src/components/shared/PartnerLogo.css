@@ -1,0 +1,51 @@
+.partner-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+/* Image logo */
+.partner-logo img {
+  max-width: 120px;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.partner-logo:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Placeholder logo */
+.partner-logo-placeholder {
+  flex-direction: column;
+  gap: 8px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 20px;
+  background: white;
+}
+
+.partner-logo-initial {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.partner-domain {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+}
