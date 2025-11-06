@@ -18,7 +18,7 @@ const Skilliacademy = () => {
       domain: "francetravail.fr",
       color: "#0052CC",
       description: "Finance la POEI à 100% pour les demandeurs d'emploi inscrits",
-      src: "https://logo.clearbit.com/francetravail.fr",
+      src: "https://cdn.brandfetch.io/idvgkhXCO6/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1760277138503",
       alt: "Logo France Travail"
     },
     {
@@ -26,7 +26,7 @@ const Skilliacademy = () => {
       domain: "akto.fr",
       color: "#00A9E0",
       description: "OPCO référent pour les secteurs du commerce et des services",
-      src: "https://logo.clearbit.com/akto.fr",
+      src: "https://cdn.brandfetch.io/idqKJYdEw4/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1755694168208",
       alt: "Logo AKTO"
     },
     {
