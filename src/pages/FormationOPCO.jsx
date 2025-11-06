@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Navbar from '../components/navigation/Navbar';
+import Footer from '../components/shared/Footer';
 import Button from '../components/shared/Button';
 import Icons from '../components/shared/Icons';
 import '../styles/FormationOPCO.css';
@@ -127,9 +129,11 @@ const FormationOPCO = () => {
   };
 
   return (
-    <main className="formation-opco-page">
-      {/* Hero Section */}
-      <section className="hero-formation">
+    <>
+      <Navbar />
+      <main className="formation-opco-page">
+        {/* Hero Section */}
+        <section className="hero-formation">
         <div className="container">
           <motion.div
             className="hero-content-formation"
@@ -155,10 +159,10 @@ const FormationOPCO = () => {
             </p>
 
             <div className="hero-cta-formation">
-              <Button variant="primary" size="large" href="#contact">
+              <Button variant="purple" size="large" href="https://form.jotform.com/253092217441047">
                 Demander un audit gratuit
               </Button>
-              <Button variant="yellow" size="large" href="#contact">
+              <Button variant="yellow" size="large" href="https://form.jotform.com/253092009243046">
                 Obtenir un devis personnalisé
               </Button>
             </div>
@@ -331,7 +335,7 @@ const FormationOPCO = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <h3>Prêt à transformer vos équipes et accélérer votre croissance ?</h3>
-            <Button variant="primary" size="large" href="#contact">
+            <Button variant="purple" size="large" href="https://form.jotform.com/253092217441047">
               Demander un audit gratuit
             </Button>
             <p className="cta-subtitle">Réponse sous 24h • Sans engagement</p>
@@ -371,7 +375,7 @@ const FormationOPCO = () => {
 
           <div className="section-cta">
             <h3>Commencez dès aujourd'hui votre transformation</h3>
-            <Button variant="primary" size="large" href="#contact">
+            <Button variant="purple" size="large" href="https://form.jotform.com/253092217441047">
               Planifier mon audit gratuit
             </Button>
             <p className="cta-subtitle">Premier échange offert • Sans engagement</p>
@@ -428,7 +432,7 @@ const FormationOPCO = () => {
 
           <div className="section-cta">
             <h3>Besoin d'un programme sur-mesure pour votre entreprise ?</h3>
-            <Button variant="primary" size="large" href="#contact">
+            <Button variant="purple" size="large" href="https://form.jotform.com/253092217441047">
               Demander un audit gratuit
             </Button>
             <p className="cta-subtitle">Échange personnalisé • Analyse de vos besoins • Sans engagement</p>
@@ -480,171 +484,102 @@ const FormationOPCO = () => {
         </div>
       </section>
 
-      {/* Contact/Form Section */}
-      <section className="section contact-section" id="contact">
+      {/* Contact Section */}
+      <section className="section contact-info-section" id="contact">
         <div className="container">
-          <div className="contact-grid">
-            <motion.div
-              className="contact-left"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="contact-header">
-                <h2>Lancez votre projet dès aujourd'hui</h2>
-                <p className="contact-intro">
-                  Préparez vos équipes pour les enjeux de demain : croissance, digitalisation, leadership… Nous vous aidons à structurer ce projet dans un format clé en main, avec un financement quasiment total via OPCO.
-                </p>
+          <motion.div
+            className="contact-info-content"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="contact-header">
+              <h2>Lancez votre projet dès aujourd'hui</h2>
+              <p className="contact-intro">
+                Préparez vos équipes pour les enjeux de demain : croissance, digitalisation, leadership… Nous vous aidons à structurer ce projet dans un format clé en main, avec un financement quasiment total via OPCO.
+              </p>
+            </div>
+
+            <div className="contact-steps-wrapper">
+              <h3>Pourquoi nous choisir ?</h3>
+              <ul className="contact-steps">
+                <li>
+                  <div className="contact-steps-icon">
+                    <Icons.Zap size={24} />
+                  </div>
+                  <div className="contact-steps-content">
+                    <strong>Réponse sous 24h</strong>
+                    <span>Un conseiller vous recontacte rapidement</span>
+                  </div>
+                </li>
+                <li>
+                  <div className="contact-steps-icon">
+                    <Icons.DollarSign size={24} />
+                  </div>
+                  <div className="contact-steps-content">
+                    <strong>0€ d'avance</strong>
+                    <span>Prise en charge OPCO quasi totale</span>
+                  </div>
+                </li>
+                <li>
+                  <div className="contact-steps-icon">
+                    <Icons.CheckCircle size={24} />
+                  </div>
+                  <div className="contact-steps-content">
+                    <strong>100% sur-mesure</strong>
+                    <span>Programme adapté à vos besoins</span>
+                  </div>
+                </li>
+                <li>
+                  <div className="contact-steps-icon">
+                    <Icons.Award size={24} />
+                  </div>
+                  <div className="contact-steps-content">
+                    <strong>Sans engagement</strong>
+                    <span>Audit et devis gratuits</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section contact-cta-section">
+        <div className="container">
+          <motion.div
+            className="contact-cta-content"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="contact-cta-icon">
+              <Icons.Mail size={48} />
+            </div>
+            <h2>Prêt à passer à l'action ?</h2>
+            <p>Contactez-nous pour un audit gratuit et personnalisé de vos besoins en formation</p>
+            <Button variant="purple" size="large" href="https://form.jotform.com/253092217441047">
+              Contactez-nous
+            </Button>
+            <div className="contact-info-details">
+              <div className="contact-detail">
+                <Icons.Phone size={20} />
+                <a href="tel:+33970196702">09 70 19 67 02</a>
               </div>
-
-              <div className="contact-steps-wrapper">
-                <h3>Pourquoi nous choisir ?</h3>
-                <ul className="contact-steps">
-                  <li>
-                    <div className="contact-steps-icon">
-                      <Icons.Zap size={24} />
-                    </div>
-                    <div className="contact-steps-content">
-                      <strong>Réponse sous 24h</strong>
-                      <span>Un conseiller vous recontacte rapidement</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="contact-steps-icon">
-                      <Icons.DollarSign size={24} />
-                    </div>
-                    <div className="contact-steps-content">
-                      <strong>0€ d'avance</strong>
-                      <span>Prise en charge OPCO quasi totale</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="contact-steps-icon">
-                      <Icons.CheckCircle size={24} />
-                    </div>
-                    <div className="contact-steps-content">
-                      <strong>100% sur-mesure</strong>
-                      <span>Programme adapté à vos besoins</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="contact-steps-icon">
-                      <Icons.Award size={24} />
-                    </div>
-                    <div className="contact-steps-content">
-                      <strong>Sans engagement</strong>
-                      <span>Audit et devis gratuits</span>
-                    </div>
-                  </li>
-                </ul>
+              <div className="contact-detail">
+                <Icons.Mail size={20} />
+                <a href="mailto:contact@skilliacademy.fr">contact@skilliacademy.fr</a>
               </div>
-            </motion.div>
-
-            <motion.div
-              className="form-container"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <h3>Demander un audit gratuit</h3>
-              <p className="form-subtitle">Remplissez le formulaire et un conseiller vous recontacte sous 24h</p>
-              <form onSubmit={handleSubmit} className="contact-form">
-                <div className="form-group">
-                  <label htmlFor="nom">Nom *</label>
-                  <input
-                    type="text"
-                    id="nom"
-                    name="nom"
-                    value={formData.nom}
-                    onChange={handleChange}
-                    placeholder="Votre nom complet"
-                    required
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="entreprise">Entreprise *</label>
-                  <input
-                    type="text"
-                    id="entreprise"
-                    name="entreprise"
-                    value={formData.entreprise}
-                    onChange={handleChange}
-                    placeholder="Nom de votre entreprise"
-                    required
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="fonction">Fonction *</label>
-                  <input
-                    type="text"
-                    id="fonction"
-                    name="fonction"
-                    value={formData.fonction}
-                    onChange={handleChange}
-                    placeholder="Votre fonction"
-                    required
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="email">Email *</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="votre.email@entreprise.com"
-                    required
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="besoin">Besoin principal *</label>
-                  <select
-                    id="besoin"
-                    name="besoin"
-                    value={formData.besoin}
-                    onChange={handleChange}
-                    required
-                  >
-                    <option value="">Sélectionnez votre besoin</option>
-                    <option value="leadership">Leadership & Management</option>
-                    <option value="digitalisation">Digitalisation</option>
-                    <option value="ia">Intelligence Artificielle</option>
-                    <option value="autre">Autre</option>
-                  </select>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="message">Commentaire / Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Décrivez brièvement votre projet..."
-                    rows="4"
-                  />
-                </div>
-
-                <Button type="submit" variant="primary" size="large">
-                  Envoyer ma demande
-                </Button>
-
-                <p className="form-disclaimer">
-                  En soumettant ce formulaire, vous acceptez d'être contacté par Skilliacademy concernant votre projet de formation.
-                </p>
-              </form>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
     </main>
+    <Footer />
+    </>
   );
 };
 

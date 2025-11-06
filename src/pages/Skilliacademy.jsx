@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Navbar from '../components/navigation/Navbar';
+import Footer from '../components/shared/Footer';
 import Button from '../components/shared/Button';
 import Card from '../components/shared/Card';
 import Icons from '../components/shared/Icons';
@@ -15,49 +17,65 @@ const Skilliacademy = () => {
       name: "France Travail",
       domain: "francetravail.fr",
       color: "#0052CC",
-      description: "Finance la POEI à 100% pour les demandeurs d'emploi inscrits"
+      description: "Finance la POEI à 100% pour les demandeurs d'emploi inscrits",
+      src: "https://logo.clearbit.com/francetravail.fr",
+      alt: "Logo France Travail"
     },
     {
       name: "AKTO",
       domain: "akto.fr",
       color: "#00A9E0",
-      description: "OPCO référent pour les secteurs du commerce et des services"
+      description: "OPCO référent pour les secteurs du commerce et des services",
+      src: "https://logo.clearbit.com/akto.fr",
+      alt: "Logo AKTO"
     },
     {
       name: "OPCO Mobilités",
       domain: "opcomobilites.fr",
       color: "#E63312",
-      description: "Opérateur de compétences pour le transport et la logistique"
+      description: "Opérateur de compétences pour le transport et la logistique",
+      src: "https://logo.clearbit.com/opcomobilites.fr",
+      alt: "Logo OPCO Mobilités"
     },
     {
       name: "OPCO 2i",
       domain: "opco2i.fr",
       color: "#2E3192",
-      description: "OPCO de l'industrie et de l'interindustriel"
+      description: "OPCO de l'industrie et de l'interindustriel",
+      src: "https://logo.clearbit.com/opco2i.fr",
+      alt: "Logo OPCO 2i"
     },
     {
       name: "Constructys",
       domain: "constructys.fr",
       color: "#ED7D31",
-      description: "Opérateur de compétences de la construction et du BTP"
+      description: "Opérateur de compétences de la construction et du BTP",
+      src: "https://logo.clearbit.com/constructys.fr",
+      alt: "Logo Constructys"
     },
     {
       name: "Atlas",
       domain: "opco-atlas.fr",
       color: "#00B8D4",
-      description: "OPCO des services financiers et du conseil"
+      description: "OPCO des services financiers et du conseil",
+      src: "https://logo.clearbit.com/opco-atlas.fr",
+      alt: "Logo Atlas"
     },
     {
       name: "Afdas",
       domain: "afdas.com",
       color: "#D50032",
-      description: "Opérateur pour la culture, les médias et les loisirs"
+      description: "Opérateur pour la culture, les médias et les loisirs",
+      src: "https://logo.clearbit.com/afdas.com",
+      alt: "Logo Afdas"
     },
     {
       name: "Région Île-de-France",
       domain: "iledefrance.fr",
       color: "#E4003A",
-      description: "Cofinancement des formations et aides aux entreprises"
+      description: "Cofinancement des formations et aides aux entreprises",
+      src: "https://logo.clearbit.com/iledefrance.fr",
+      alt: "Logo Région Île-de-France"
     }
   ];
 
@@ -233,9 +251,11 @@ const Skilliacademy = () => {
   };
 
   return (
-    <main className="skilliacademy-page">
-      {/* Hero Section */}
-      <section className="section hero-academy">
+    <>
+      <Navbar />
+      <main className="skilliacademy-page">
+        {/* Hero Section */}
+        <section className="section hero-academy">
         <div className="container">
           <motion.div
             className="hero-content"
@@ -251,10 +271,10 @@ const Skilliacademy = () => {
             <h1>Skilliacademy forme vos futurs collaborateurs avant leur embauche</h1>
             <p className="hero-subtitle">100% financé par France Travail.</p>
             <div className="hero-buttons">
-              <Button variant="primary" size="large" href="tel:+33970196702">
+              <Button variant="purple" size="large" href="/poei">
                 Je lance ma mission POEI
               </Button>
-              <Button variant="yellow" size="large" href="#formation">
+              <Button variant="yellow" size="large" href="/formation">
                 Je me forme chez Skilliacademy
               </Button>
             </div>
@@ -278,6 +298,8 @@ const Skilliacademy = () => {
                     name={partner.name}
                     domain={partner.domain}
                     color={partner.color}
+                    src={partner.src}
+                    alt={partner.alt}
                   />
                   <h4 className="partner-name">{partner.name}</h4>
                   <p className="partner-description">{partner.description}</p>
@@ -414,10 +436,10 @@ const Skilliacademy = () => {
           </div>
 
           <div className="section-cta">
-            <Button variant="primary" size="large" href="tel:+33970196702">
+            <Button variant="purple" size="large" href="/poei">
               Je lance ma mission POEI
             </Button>
-            <Button variant="yellow" size="large" href="#formation">
+            <Button variant="yellow" size="large" href="/formation">
               Je me forme chez Skilliacademy
             </Button>
           </div>
@@ -449,10 +471,10 @@ const Skilliacademy = () => {
           </div>
 
           <div className="section-cta" style={{ marginTop: '3rem' }}>
-            <Button variant="primary" size="large" href="tel:+33970196702">
+            <Button variant="purple" size="large" href="/poei">
               Je lance ma mission POEI
             </Button>
-            <Button variant="yellow" size="large" href="#formation">
+            <Button variant="yellow" size="large" href="/formation">
               Je me forme chez Skilliacademy
             </Button>
           </div>
@@ -557,10 +579,10 @@ const Skilliacademy = () => {
 
           {/* CTAs */}
           <div className="section-cta">
-            <Button variant="primary" size="large" href="tel:+33970196702">
+            <Button variant="purple" size="large" href="/poei">
               Je lance ma mission POEI
             </Button>
-            <Button variant="yellow" size="large" href="#formation">
+            <Button variant="yellow" size="large" href="/formation">
               Je me forme chez Skilliacademy
             </Button>
           </div>
@@ -598,10 +620,10 @@ const Skilliacademy = () => {
           </div>
 
           <div className="section-cta" style={{ marginTop: '3rem' }}>
-            <Button variant="primary" size="large" href="tel:+33970196702">
+            <Button variant="purple" size="large" href="/poei">
               Je lance ma mission POEI
             </Button>
-            <Button variant="yellow" size="large" href="#formation">
+            <Button variant="yellow" size="large" href="/formation">
               Je me forme chez Skilliacademy
             </Button>
           </div>
@@ -627,10 +649,10 @@ const Skilliacademy = () => {
           </div>
 
           <div className="section-cta">
-            <Button variant="primary" size="large" href="tel:+33970196702">
+            <Button variant="purple" size="large" href="/poei">
               Je lance ma mission POEI
             </Button>
-            <Button variant="yellow" size="large" href="#formation">
+            <Button variant="yellow" size="large" href="/formation">
               Je me forme chez Skilliacademy
             </Button>
           </div>
@@ -653,10 +675,10 @@ const Skilliacademy = () => {
               Nous gérons le dispositif, vous validez les profils. Simple, rapide et 100 % financé.
             </p>
             <div className="cta-buttons">
-              <Button variant="primary" size="large" href="tel:+33970196702">
+              <Button variant="purple" size="large" href="/poei">
                 Je lance ma mission POEI maintenant
               </Button>
-              <Button variant="yellow" size="large" href="#formation">
+              <Button variant="yellow" size="large" href="/formation">
                 Je me forme chez Skilliacademy
               </Button>
             </div>
@@ -716,6 +738,8 @@ const Skilliacademy = () => {
         </div>
       </section>
     </main>
+    <Footer />
+    </>
   );
 };
 

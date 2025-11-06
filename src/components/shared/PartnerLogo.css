@@ -6,19 +6,32 @@
   transition: all 0.3s ease;
 }
 
+/* Logo avec couleur de marque */
+.partner-logo-with-color {
+  border: 2px solid;
+  border-radius: 16px;
+  padding: 24px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.partner-logo-with-color:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
 /* Image logo */
 .partner-logo img {
   max-width: 120px;
   height: auto;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.6;
+  filter: grayscale(0%);
+  opacity: 1;
   transition: all 0.3s ease;
 }
 
 .partner-logo:hover img {
-  filter: grayscale(0%);
-  opacity: 1;
+  transform: scale(1.05);
 }
 
 /* Placeholder logo */

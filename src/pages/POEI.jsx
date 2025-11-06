@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/navigation/Navbar';
+import Footer from '../components/shared/Footer';
 import Button from '../components/shared/Button';
 import Icons from '../components/shared/Icons';
 import '../styles/POEI.css';
@@ -108,9 +110,11 @@ const POEI = () => {
   };
 
   return (
-    <main className="skilliacademy-page">
-      {/* Section 1 - Hero */}
-      <section className="hero-skilliacademy">
+    <>
+      <Navbar />
+      <main className="skilliacademy-page">
+        {/* Section 1 - Hero */}
+        <section className="hero-skilliacademy">
         <div className="container">
           <div className="hero-layout">
             {/* Colonne gauche - Contenu principal */}
@@ -176,7 +180,7 @@ const POEI = () => {
                   <h4>La POEI</h4>
                   <p>Former avant de recruter, grâce à un dispositif 100 % financé</p>
                 </div>
-                <Button variant="primary" size="large" href="#poei">
+                <Button variant="purple" size="large" href="https://form.jotform.com/253092217441047">
                   Découvrir la POEI
                 </Button>
               </motion.div>
@@ -193,7 +197,7 @@ const POEI = () => {
                   <h4>La Formation sur-mesure</h4>
                   <p>Développer les compétences internes, sans coût pour l'entreprise</p>
                 </div>
-                <Button variant="yellow" size="large" href="#formation-opco">
+                <Button variant="yellow" size="large" href="/formation">
                   Formation sur-mesure OPCO
                 </Button>
               </motion.div>
@@ -291,7 +295,7 @@ const POEI = () => {
                 </ul>
               </div>
               <div className="device-cta">
-                <Button variant="primary" size="large" href="/poei">
+                <Button variant="purple" size="large" href="https://form.jotform.com/253092217441047">
                   En savoir plus sur la POEI
                 </Button>
               </div>
@@ -324,7 +328,7 @@ const POEI = () => {
                 </ul>
               </div>
               <div className="device-cta">
-                <Button variant="yellow" size="large" href="/formation-opco">
+                <Button variant="yellow" size="large" href="/formation">
                   Découvrir les formations
                 </Button>
               </div>
@@ -363,7 +367,7 @@ const POEI = () => {
               ))}
             </div>
             <div className="how-it-works-cta">
-              <Button variant="primary" size="large" href="tel:+33782028636">
+              <Button variant="purple" size="large" href="https://form.jotform.com/253092217441047">
                 Planifier mon diagnostic gratuit
               </Button>
             </div>
@@ -527,14 +531,14 @@ const POEI = () => {
               <div className="cta-block">
                 <h3>POEI</h3>
                 <p>Former avant de recruter</p>
-                <Button variant="primary" size="large" href="/poei">
+                <Button variant="purple" size="large" href="https://form.jotform.com/253092217441047">
                   Découvrir la POEI
                 </Button>
               </div>
               <div className="cta-block">
                 <h3>Formation OPCO</h3>
                 <p>Développer vos équipes</p>
-                <Button variant="yellow" size="large" href="/formation-opco">
+                <Button variant="yellow" size="large" href="/formation">
                   Formation sur-mesure OPCO
                 </Button>
               </div>
@@ -546,6 +550,8 @@ const POEI = () => {
         </div>
       </section>
     </main>
+    <Footer />
+    </>
   );
 };
 

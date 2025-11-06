@@ -1,57 +1,84 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import './Button.css';
 
 const Button = ({
   children,
   variant = 'primary',
   size = 'medium',
-  href,
   onClick,
-  disabled = false,
-  type = 'button',
+  href,
   className = '',
+  disabled = false,
+  icon,
   ...props
 }) => {
-  const buttonClasses = `btn btn-${variant} btn-${size} ${className}`.trim();
+  const baseClass = 'btn';
+  const variantClass = `btn-${variant}`;
+  const sizeClass = `btn-${size}`;
+  const classes = `${baseClass} ${variantClass} ${sizeClass} ${className}`.trim();
 
-  // Si c'est un lien externe (http/https/tel/mailto)
-  if (href && (href.startsWith('http') || href.startsWith('tel:') || href.startsWith('mailto:'))) {
+  const content = (
+    <>
+      {icon && <span className="btn-icon">{icon}</span>}
+      <span>{children}</span>
+    </>
+  );
+
+  // Si c'est un lien
+  if (href && !disabled) {
+    // Lien externe (commence par http ou mailto: ou tel:)
+    const isExternal = href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:');
+
+    if (isExternal) {
+      // Pour les liens http/https, ouvrir dans un nouvel onglet
+      const shouldOpenNewTab = href.startsWith('http');
+
+      return (
+        <motion.a
+          href={href}
+          className={classes}
+          target={shouldOpenNewTab ? "_blank" : undefined}
+          rel={shouldOpenNewTab ? "noopener noreferrer" : undefined}
+          whileHover={{ scale: 1.02, y: -2 }}
+          whileTap={{ scale: 0.98 }}
+          transition={{ duration: 0.2 }}
+          {...props}
+        >
+          {content}
+        </motion.a>
+      );
+    }
+
+    // Lien interne (utilise React Router Link)
     return (
-      <a
-        href={href}
-        className={buttonClasses}
-        {...props}
+      <motion.div
+        whileHover={{ scale: 1.02, y: -2 }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ duration: 0.2 }}
+        style={{ display: 'inline-block' }}
       >
-        {children}
-      </a>
+        <Link to={href} className={classes} {...props}>
+          {content}
+        </Link>
+      </motion.div>
     );
   }
 
-  // Si c'est un lien interne React Router
-  if (href) {
-    return (
-      <Link
-        to={href}
-        className={buttonClasses}
-        {...props}
-      >
-        {children}
-      </Link>
-    );
-  }
-
-  // Sinon, c'est un bouton
+  // Si c'est un bouton
   return (
-    <button
-      type={type}
+    <motion.button
+      className={classes}
       onClick={onClick}
       disabled={disabled}
-      className={buttonClasses}
+      whileHover={{ scale: disabled ? 1 : 1.02, y: disabled ? 0 : -2 }}
+      whileTap={{ scale: disabled ? 1 : 0.98 }}
+      transition={{ duration: 0.2 }}
       {...props}
     >
-      {children}
-    </button>
+      {content}
+    </motion.button>
   );
 };
 

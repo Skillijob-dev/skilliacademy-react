@@ -1,0 +1,10 @@
+<svg width="180" height="60" viewBox="0 0 180 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- S Letter -->
+  <path d="M15 12C15 12 7 12 7 20C7 28 15 28 15 28C15 28 23 28 23 36C23 44 15 44 15 44" stroke="white" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Circle -->
+  <circle cx="40" cy="28" r="10" stroke="white" stroke-width="3" fill="none"/>
+
+  <!-- Text -->
+  <text x="58" y="35" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">Skillijob</text>
+</svg>

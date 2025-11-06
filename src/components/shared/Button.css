@@ -27,6 +27,16 @@
   box-shadow: 0 12px 24px rgba(245, 158, 11, 0.4);
 }
 
+.btn-purple {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
+  color: white;
+}
+
+.btn-purple:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(108, 0, 255, 0.4);
+}
+
 .btn-yellow {
   background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-2) 100%);
   color: white;
@@ -71,4 +81,12 @@
 .btn-large {
   padding: 16px 32px;
   font-size: 18px;
+}
+
+/* Icon support */
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
 }
