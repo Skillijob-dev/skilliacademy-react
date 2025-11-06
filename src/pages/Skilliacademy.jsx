@@ -6,6 +6,7 @@ import Button from '../components/shared/Button';
 import Card from '../components/shared/Card';
 import Icons from '../components/shared/Icons';
 import PartnerLogo from '../components/shared/PartnerLogo';
+import franceTravailLogo from '../assets/francetravail.jpg';
 import '../styles/Skilliacademy.css';
 
 const Skilliacademy = () => {
@@ -18,7 +19,7 @@ const Skilliacademy = () => {
       domain: "francetravail.fr",
       color: "#0052CC",
       description: "Finance la POEI à 100% pour les demandeurs d'emploi inscrits",
-      src: "https://cdn.brandfetch.io/idvgkhXCO6/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1760277138503",
+      src: franceTravailLogo,
       alt: "Logo France Travail"
     },
     {
@@ -294,13 +295,13 @@ const Skilliacademy = () => {
             <div className="partners-track">
               {partners.concat(partners).map((partner, index) => (
                 <div key={index} className="partner-card">
-                  <PartnerLogo
-                    name={partner.name}
-                    domain={partner.domain}
-                    color={partner.color}
-                    src={partner.src}
-                    alt={partner.alt}
-                  />
+                  <div className="partner-logo-container">
+                    <img
+                      src={partner.src}
+                      alt={partner.alt}
+                      className="partner-logo-img"
+                    />
+                  </div>
                   <h4 className="partner-name">{partner.name}</h4>
                   <p className="partner-description">{partner.description}</p>
                 </div>
