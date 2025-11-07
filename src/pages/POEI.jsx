@@ -10,6 +10,7 @@ import '../styles/POEI.css';
 const POEI = () => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [[page, direction], setPage] = React.useState([0, 0]);
+  const [showAllTestimonials, setShowAllTestimonials] = React.useState(false);
 
   const testimonials = [
     {
@@ -503,6 +504,59 @@ const POEI = () => {
               <div className="carousel-counter">
                 <span>{currentIndex + 1}</span> / {testimonials.length}
               </div>
+            </div>
+
+            {/* Vue mobile simple */}
+            <div className="mobile-testimonials-list">
+              {(showAllTestimonials ? testimonials : testimonials.slice(0, 1)).map((testimonial, index) => (
+                <div key={index} className="mobile-testimonial-card">
+                  <div className="testimonial-header">
+                    <div className="testimonial-rating">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Icons.Star key={i} size={14} />
+                      ))}
+                    </div>
+                    {testimonial.verified && (
+                      <span className="verified-badge">
+                        <Icons.CheckCircle size={14} /> Vérifié
+                      </span>
+                    )}
+                  </div>
+                  <p className="testimonial-text-mobile">
+                    "{testimonial.text}"
+                  </p>
+                  <div className="testimonial-footer">
+                    <div className="testimonial-author">
+                      <div className="author-avatar-mobile">
+                        {testimonial.author.charAt(0)}
+                      </div>
+                      <div className="author-info">
+                        <strong>{testimonial.author}</strong>
+                        <span className="author-role">{testimonial.role}</span>
+                        <span className="author-company">{testimonial.company}</span>
+                      </div>
+                    </div>
+                    <span className="testimonial-date">{testimonial.date}</span>
+                  </div>
+                </div>
+              ))}
+
+              <button
+                className="show-more-btn"
+                onClick={() => setShowAllTestimonials(!showAllTestimonials)}
+              >
+                {showAllTestimonials ? (
+                  <>
+                    <Icons.ChevronDown size={20} style={{ transform: 'rotate(180deg)' }} />
+                    Voir moins
+                  </>
+                ) : (
+                  <>
+                    <Icons.ChevronDown size={20} />
+                    Voir plus d'avis ({testimonials.length - 1})
+                  </>
+                )}
+              </button>
             </div>
 
             <div className="certifications">
