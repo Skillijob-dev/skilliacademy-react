@@ -62,7 +62,7 @@
 }
 
 .hero-content h1 {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(2.2rem, 4.5vw, 3rem);
   font-weight: 800;
   margin-bottom: 1rem;
   line-height: 1.2;
@@ -95,7 +95,7 @@ section {
 
 .section-title {
   text-align: center;
-  font-size: 2.4rem;
+  font-size: 2.1rem;
   margin: 0 0 0.5rem;
   background: linear-gradient(135deg, var(--primary), var(--primary-2));
   -webkit-background-clip: text;
@@ -274,7 +274,7 @@ section {
   -webkit-text-fill-color: var(--white) !important;
   background: none !important;
   font-weight: 800;
-  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-size: clamp(1.8rem, 4.5vw, 2.4rem);
   margin-bottom: 16px;
   text-align: center;
 }
@@ -389,7 +389,7 @@ section {
 }
 
 .why-intro-title {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--primary);
   margin: 0 0 1rem;
@@ -600,7 +600,7 @@ section {
 }
 
 .advantage-card-title {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 800;
   color: var(--white);
   margin: 0;
@@ -711,7 +711,7 @@ section {
 }
 
 .carousel-card-title {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--text);
   margin: 0 0 1.5rem;
@@ -1009,7 +1009,7 @@ section {
 
 .service-title-horizontal {
   flex: 1;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--white);
   margin: 0;
@@ -1092,7 +1092,7 @@ section {
 }
 
 .final-cta h2 {
-  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
   font-weight: 800;
   margin-bottom: 1.5rem;
   color: var(--white) !important;
